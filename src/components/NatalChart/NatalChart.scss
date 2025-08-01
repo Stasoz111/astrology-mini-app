@@ -62,32 +62,34 @@
 
   .icon {
     position: absolute;
-    font-size: 16px;
+    font-size: 12px;
     font-family: "Inter", sans-serif;
-    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 4px;
     color: white;
 
     &.fire {
-      top: 50px;
-      left: 40px;
+      top: 40px;
+      left: 10px;
+      color: #fe9a00;
     }
 
     &.air {
-      top: 50px;
-      right: 40px;
+      top: 40px;
+      right: 10px;
+      color: #49FAFA;
     }
 
     &.earth {
-      bottom: 50px;
-      left: 40px;
+      bottom: 40px;
+      left: 10px;
+      color: #06FECC;
     }
 
     &.water {
-      bottom: 50px;
-      right: 40px;
+      bottom: 40px;
+      right: 10px;
+      color: #998BF7;
     }
   }
 }

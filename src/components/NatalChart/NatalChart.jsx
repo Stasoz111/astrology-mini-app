@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import "./NatalChart.scss";
-// import { ReactComponent as FireIcon } from '../../assets/natal/fire.svg';
+import Fire from "../../assets/natal/fire.svg";
+import Air from "../../assets/natal/air.svg";
+import Earth from "../../assets/natal/earth.svg";
+import Water from "../../assets/natal/water.svg";
 
 export default function NatalChart({ svgContent }) {
   const containerRef = useRef(null);
@@ -104,10 +107,18 @@ export default function NatalChart({ svgContent }) {
           ref={containerRef}
           dangerouslySetInnerHTML={{ __html: svgContent }}
         />
-        <div className="icon fire"></div>
-        <div className="icon air">💨</div>
-        <div className="icon earth">🌿</div>
-        <div className="icon water">💧</div>
+        <div className="icon fire">
+          <Fire /> 14%
+        </div>
+        <div className="icon air">
+          <Air /> 33%
+        </div>
+        <div className="icon earth">
+          <Earth /> 55%
+        </div>
+        <div className="icon water">
+          <Water /> 12%
+        </div>
       </div>
     </>
   );
