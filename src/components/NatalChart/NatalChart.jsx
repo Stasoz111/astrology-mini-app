@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./NatalChart.scss";
+// import { ReactComponent as FireIcon } from '../../assets/natal/fire.svg';
 
 export default function NatalChart({ svgContent }) {
   const containerRef = useRef(null);
@@ -52,7 +53,6 @@ export default function NatalChart({ svgContent }) {
     cuspLines.forEach((line, i) => {
       const nextLine = cuspLines[(i + 1) % 12];
 
-
       const x1 = parseFloat(line.getAttribute("x2")) + offsetX;
       const y1 = parseFloat(line.getAttribute("y2")) + offsetY;
       const x2 = parseFloat(nextLine.getAttribute("x2")) + offsetX;
@@ -84,8 +84,6 @@ export default function NatalChart({ svgContent }) {
         console.log(`Нажата область дома ${i + 1}`);
       });
 
-      console.log('SVG', svg);
-
       svg.appendChild(polygon);
     });
 
@@ -100,19 +98,17 @@ export default function NatalChart({ svgContent }) {
 
   return (
     <>
-        {/* <div className="natal-wrapper"> */}
- <div
-        className="natal-container"
-        ref={containerRef}
-        dangerouslySetInnerHTML={{ __html: svgContent }}
-      />
-      {/* <div className="icon fire">🔥</div>
-      <div className="icon air">💨</div>
-      <div className="icon earth">🌿</div>
-      <div className="icon water">💧</div>
-    </div> */}
-
+      <div className="natal-wrapper">
+        <div
+          className="natal-container"
+          ref={containerRef}
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+        <div className="icon fire"></div>
+        <div className="icon air">💨</div>
+        <div className="icon earth">🌿</div>
+        <div className="icon water">💧</div>
+      </div>
     </>
-
   );
 }
